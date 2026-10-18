@@ -65,6 +65,7 @@ dependencies:
   google_mlkit_text_recognition: any
   google_mlkit_image_labeling: any
   shared_preferences: ^2.3.0
+  flutter_phone_direct_caller: ^2.1.1
 
 dev_dependencies:
   flutter_test:

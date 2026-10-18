@@ -1,126 +1,3 @@
-// /// Overrides / additions to strings.dart (looked up first).
-// const s2 = <String, List<String>>{
-//   'welcome': [
-//     "Hello! I'm Kalpana, your voice companion. Before we begin, you need to sign up. It only takes a minute, and you can do all of it by speaking. I'll ask you questions, and you just answer.",
-//     'नमस्ते! मैं कल्पना हूँ, आपकी आवाज़ की साथी। शुरू करने से पहले आपको साइन अप करना होगा। इसमें बस एक मिनट लगेगा, और आप सब कुछ बोलकर कर सकते हैं। मैं सवाल पूछूँगी, आप बस जवाब दीजिए।',
-//     'नमस्कार! मी कल्पना, तुमची आवाजाची सोबती. सुरू करण्यापूर्वी तुम्हाला साइन अप करावे लागेल. यासाठी फक्त एक मिनिट लागेल, आणि तुम्ही सर्व काही बोलून करू शकता. मी प्रश्न विचारेन, तुम्ही फक्त उत्तर द्या.'
-//   ],
-//   'welcomeBack': [
-//     'Welcome back, {name}. Say Hey Kalpana whenever you need me.',
-//     'वापसी पर स्वागत है, {name}। जब भी ज़रूरत हो, बोलिए Hey Kalpana।',
-//     'पुन्हा स्वागत, {name}. गरज असेल तेव्हा म्हणा Hey Kalpana.'
-//   ],
-//   'askLang': [
-//     'Which language would you like me to speak: English, Hindi or Marathi?',
-//     'आप मुझसे किस भाषा में बात करना चाहेंगे: अंग्रेज़ी, हिंदी या मराठी?',
-//     'तुम्हाला मी कोणत्या भाषेत बोलावे: इंग्रजी, हिंदी की मराठी?'
-//   ],
-//   'askPerms': [
-//     'I also need access to your camera and your location. Say allow to continue, or say skip.',
-//     'मुझे आपके कैमरे और लोकेशन की अनुमति भी चाहिए। जारी रखने के लिए बोलिए अनुमति, या बोलिए छोड़ो।',
-//     'मला तुमच्या कॅमेऱ्याची आणि स्थानाची परवानगी पण हवी आहे. पुढे जाण्यासाठी म्हणा परवानगी, किंवा म्हणा वगळा.'
-//   ],
-//   'permsLater': [
-//     'Okay. You can allow the camera and location later by saying allow permissions.',
-//     'ठीक है। आप बाद में अनुमति बोलकर कैमरा और लोकेशन की अनुमति दे सकते हैं।',
-//     'ठीक आहे. तुम्ही नंतर परवानगी म्हणून कॅमेरा आणि स्थानाची परवानगी देऊ शकता.'
-//   ],
-//   'askName': ["What's your name?", 'आपका नाम क्या है?', 'तुमचे नाव काय आहे?'],
-//   'askPhone': [
-//     "What's your phone number? Say the digits slowly.",
-//     'आपका फ़ोन नंबर क्या है? अंक धीरे-धीरे बोलिए।',
-//     'तुमचा फोन नंबर काय आहे? अंक हळू हळू सांगा.'
-//   ],
-//   'askEmName': [
-//     'Who is your emergency contact? Say their name and relation, or say skip.',
-//     'आपका आपातकालीन संपर्क कौन है? उनका नाम और रिश्ता बोलिए, या बोलिए छोड़ो।',
-//     'तुमचा आणीबाणी संपर्क कोण आहे? त्यांचे नाव आणि नाते सांगा, किंवा म्हणा वगळा.'
-//   ],
-//   'askEmPhone': [
-//     "What's {name}'s phone number?",
-//     '{name} का फ़ोन नंबर क्या है?',
-//     '{name} यांचा फोन नंबर काय आहे?'
-//   ],
-//   'heardSure': [
-//     'I heard {x}. Is that right? Say yes or no.',
-//     'मैंने सुना {x}। क्या यह सही है? हाँ या नहीं बोलिए।',
-//     'मी ऐकले {x}. बरोबर आहे का? हो किंवा नाही म्हणा.'
-//   ],
-//   'retry': ["Okay, let's try again.", 'ठीक है, फिर से कोशिश करते हैं।', 'ठीक आहे, पुन्हा प्रयत्न करूया.'],
-//   'didntCatch': ["Sorry, I didn't catch that.", 'माफ़ कीजिए, मैं समझ नहीं पाई।', 'क्षमा करा, मला नीट ऐकू आले नाही.'],
-//   'signupFail': ["I couldn't hear you clearly. You can type the details on the screen, then press Confirm."],
-//   'signupDone': [
-//     "You're all set, {name}. From now on, just say Hey Kalpana whenever you need me. Say help to hear what I can do.",
-//     'सब तैयार है, {name}। जब भी ज़रूरत हो, बस बोलिए Hey Kalpana। मैं क्या कर सकती हूँ यह सुनने के लिए बोलिए मदद।',
-//     'सर्व तयार आहे, {name}. गरज असेल तेव्हा फक्त म्हणा Hey Kalpana. मी काय करू शकते ऐकण्यासाठी म्हणा मदत.'
-//   ],
-//   'hiName': [
-//     'Hi {name}, how can I help you?',
-//     'नमस्ते {name}, मैं आपकी कैसे मदद कर सकती हूँ?',
-//     'नमस्कार {name}, मी तुम्हाला कशी मदत करू?'
-//   ],
-//   'pausedMsg': [
-//     "Okay, I've stopped listening. Say Hey Kalpana when you need me.",
-//     'ठीक है, मैंने सुनना बंद कर दिया है। ज़रूरत हो तो बोलिए Hey Kalpana।',
-//     'ठीक आहे, मी ऐकणे थांबवले आहे. गरज असेल तर म्हणा Hey Kalpana.'
-//   ],
-//   'micOffMsg': [
-//     'The microphone is off. Press Mic on when you want me to hear you.',
-//     'माइक्रोफ़ोन बंद है। जब चाहें मुझे सुनाने के लिए माइक ऑन दबाएँ।',
-//     'मायक्रोफोन बंद आहे. मला ऐकवायचे असेल तेव्हा माइक ऑन दाबा.'
-//   ],
-//   'micOnMsg': ['Listening again. Say Hey Kalpana.', 'फिर से सुन रही हूँ। बोलिए Hey Kalpana।', 'पुन्हा ऐकत आहे. म्हणा Hey Kalpana.'],
-//   'noReminders': [
-//     'You have no reminders yet. You can say, remind me to take medicine at 2 PM.',
-//     'आपके पास अभी कोई रिमाइंडर नहीं है। आप बोल सकते हैं, मुझे दोपहर 2 बजे दवा लेना याद दिलाओ।',
-//     'तुमचे अजून कोणतेही रिमाइंडर नाहीत. तुम्ही म्हणू शकता, मला दुपारी 2 वाजता औषध घ्यायची आठवण करून द्या.'
-//   ],
-//   'remindersAre': ['You have {n} reminders. {list}', 'आपके {n} रिमाइंडर हैं। {list}', 'तुमचे {n} रिमाइंडर आहेत. {list}'],
-//   'reminderSaved': ['Saved reminder: {x}.', 'रिमाइंडर सहेजा: {x}।', 'रिमाइंडर जतन केले: {x}.'],
-//   'confirmClear': ['Delete all your reminders? Say yes or no.', 'क्या आपके सभी रिमाइंडर हटा दूँ? हाँ या नहीं बोलिए।', 'तुमचे सर्व रिमाइंडर हटवू का? हो किंवा नाही म्हणा.'],
-//   'remindersCleared': ['All reminders deleted.', 'सभी रिमाइंडर हटा दिए गए।', 'सर्व रिमाइंडर हटवले.'],
-//   'camReady': [
-//     'Camera is ready. Point it at what you want, then say take picture, or press the button.',
-//     'कैमरा तैयार है। जिसे देखना है उस पर कैमरा रखें, फिर बोलिए तस्वीर लो, या बटन दबाएँ।',
-//     'कॅमेरा तयार आहे. ज्याकडे पाहायचे त्यावर कॅमेरा धरा, मग म्हणा फोटो घ्या, किंवा बटण दाबा.'
-//   ],
-//   'holdSteady': ['Hold steady.', 'स्थिर रहिए।', 'स्थिर राहा.'],
-//   'analysing': ['Got it. Let me look at the picture.', 'ठीक है, तस्वीर देख रही हूँ।', 'ठीक आहे, फोटो पाहत आहे.'],
-//   'camFail': ["The camera isn't available right now."],
-//   'noKey': ["My AI service isn't set up yet. Please add the Gemini key in the config file."],
-//   'aiKeyBad': ["My AI service didn't accept the key. Please check the Gemini key in the config file."],
-//   'aiOffline': [
-//     "I couldn't reach the internet, so I can't do that right now.",
-//     'मैं इंटरनेट से जुड़ नहीं पाई, इसलिए अभी यह नहीं कर सकती।',
-//     'मला इंटरनेटशी जोडता आले नाही, त्यामुळे आत्ता हे करता येत नाही.'
-//   ],
-//   'aiFail': ['Something went wrong while analysing. Please try again.', 'विश्लेषण में कुछ गड़बड़ हुई। कृपया फिर कोशिश करें।', 'विश्लेषणात काहीतरी चूक झाली. कृपया पुन्हा प्रयत्न करा.'],
-//   'helpHint': [
-//     'Here is what you can say. To open reminders, say: open my reminders. To save one, say: remind me to take medicine at 2 PM. To read text, say: read this text. To identify an object or medicine, say: what is this. To hear your surroundings, say: describe my surroundings. To find where you are, say: where am I. To call someone, say: call, then the name. For an emergency, say: emergency. To change language, say: change language to Hindi or Marathi. To make me stop listening, say: stop listening. To wake me again, say: Hey Kalpana.',
-//     'आप ये बोल सकते हैं। रिमाइंडर खोलने के लिए बोलिए: मेरे रिमाइंडर खोलो। नया रिमाइंडर बनाने के लिए बोलिए: मुझे दो बजे दवा लेना याद दिलाओ। लिखा हुआ पढ़ने के लिए बोलिए: यह पढ़ो। किसी चीज़ या दवा को पहचानने के लिए बोलिए: यह क्या है। आसपास जानने के लिए बोलिए: मेरे आसपास क्या है। अपनी जगह जानने के लिए बोलिए: मैं कहाँ हूँ। कॉल करने के लिए बोलिए: कॉल, फिर नाम। आपातकाल में बोलिए: इमरजेंसी। भाषा बदलने के लिए बोलिए: भाषा मराठी करो। मुझे चुप कराने के लिए बोलिए: सुनना बंद करो। दोबारा बुलाने के लिए बोलिए: Hey Kalpana।',
-//     'तुम्ही हे म्हणू शकता. रिमाइंडर उघडण्यासाठी म्हणा: माझे रिमाइंडर उघडा. नवीन रिमाइंडरसाठी म्हणा: मला दोन वाजता औषध घ्यायची आठवण करून द्या. मजकूर वाचण्यासाठी म्हणा: हे वाचा. वस्तू किंवा औषध ओळखण्यासाठी म्हणा: हे काय आहे. आजूबाजूचे जाणण्यासाठी म्हणा: माझ्या आजूबाजूला काय आहे. तुम्ही कुठे आहात हे जाणण्यासाठी म्हणा: मी कुठे आहे. कॉल करण्यासाठी म्हणा: कॉल करा, मग नाव. आणीबाणीत म्हणा: आणीबाणी. भाषा बदलण्यासाठी म्हणा: भाषा हिंदी करा. मला गप्प करण्यासाठी म्हणा: ऐकणे बंद करा. पुन्हा बोलावण्यासाठी म्हणा: Hey Kalpana.'
-//   ],
-//   'notUnderstood': [
-//     "Sorry, I didn't understand “{x}”. You can say: open my reminders, read this text, or where am I.",
-//     'माफ़ कीजिए, मैं “{x}” नहीं समझी। आप बोल सकते हैं: मेरे रिमाइंडर खोलो, यह पढ़ो, या मैं कहाँ हूँ।',
-//     'क्षमा करा, मला “{x}” समजले नाही. तुम्ही म्हणू शकता: माझे रिमाइंडर उघडा, हे वाचा, किंवा मी कुठे आहे.'
-//   ],
-//   'textIs': ['The text says: {x}', 'लिखा है: {x}', 'मजकूर असा आहे: {x}'],
-//   'noText': [
-//     "I couldn't find readable text. Hold the camera closer, in good light, and try again.",
-//     'मुझे पढ़ने लायक लिखावट नहीं मिली। कैमरा पास लाएँ, अच्छी रोशनी में फिर कोशिश करें।',
-//     'वाचता येईल असा मजकूर सापडला नाही. कॅमेरा जवळ धरा, चांगल्या प्रकाशात पुन्हा प्रयत्न करा.'
-//   ],
-//   'seeLabels': ['I can see: {x}.', 'मुझे दिख रहा है: {x}।', 'मला दिसत आहे: {x}.'],
-//   'seeNothing': ["I couldn't recognise anything clearly.", 'मैं कुछ साफ़ पहचान नहीं पाई।', 'मला काही स्पष्ट ओळखता आले नाही.'],
-//   'exploreNote': [
-//     "I can name objects, but I can't judge distances or whether the path is safe. Please use your cane or ask someone nearby.",
-//     'मैं चीज़ों के नाम बता सकती हूँ, पर दूरी या रास्ता सुरक्षित है या नहीं यह नहीं बता सकती। कृपया छड़ी का उपयोग करें या किसी से पूछें।',
-//     'मी वस्तूंची नावे सांगू शकते, पण अंतर किंवा रस्ता सुरक्षित आहे का हे सांगू शकत नाही. कृपया काठी वापरा किंवा कोणाला विचारा.'
-//   ],
-//   'colorIs': ['The main colour looks {x}.', 'मुख्य रंग {x} लग रहा है।', 'मुख्य रंग {x} दिसतो आहे.'],
-// };
-
 /// Overrides / additions to strings.dart (looked up first).
 const s2 = <String, List<String>>{
   'welcome': [
@@ -358,11 +235,6 @@ const s2 = <String, List<String>>{
     'मैं बिना आवाज़ के आगे बढ़ती हूँ। कृपया स्क्रीन पर फ़ॉर्म भरें, फिर Confirm and Open Kalpana दबाएँ।',
     'मी आवाजाशिवाय पुढे जाते. कृपया स्क्रीनवरील फॉर्म भरा, मग Confirm and Open Kalpana दाबा.'
   ],
-  'digitsPrompt': [
-    "What's your phone number? Say it in parts if you like, and I'll repeat each part back.",
-    'आपका फ़ोन नंबर क्या है? चाहें तो हिस्सों में बोलिए, मैं हर हिस्सा दोहराऊँगी।',
-    'तुमचा फोन नंबर काय आहे? हवे तर भागांमध्ये सांगा, मी प्रत्येक भाग पुन्हा सांगेन.'
-  ],
   'digitUnclear': [
     "I wasn't sure about “{x}”. Please say those digits again, one by one.",
     'मुझे “{x}” साफ़ समझ नहीं आया। कृपया वे अंक एक-एक करके फिर बोलिए।',
@@ -458,5 +330,100 @@ const s2 = <String, List<String>>{
     'Okay. Please type the details on the screen, then press Confirm and Open Kalpana.',
     'ठीक है। कृपया स्क्रीन पर जानकारी टाइप करें, फिर Confirm and Open Kalpana दबाएँ।',
     'ठीक आहे. कृपया स्क्रीनवर माहिती टाइप करा, मग Confirm and Open Kalpana दाबा.'
+  ],
+  'digitsPrompt': [
+    "What's your phone number? Say the digits in small groups of three or four, with a short pause between groups. I'll repeat each group back.",
+    'आपका फ़ोन नंबर क्या है? अंक तीन-चार के छोटे समूहों में बोलिए, हर समूह के बीच थोड़ा रुकिए। मैं हर समूह दोहराऊँगी।',
+    'तुमचा फोन नंबर काय आहे? अंक तीन-चार च्या लहान गटांमध्ये सांगा, प्रत्येक गटानंतर थोडे थांबा. मी प्रत्येक गट पुन्हा सांगेन.'
+  ],
+  'permIntro': [
+    'First, I need four permissions so I can help you properly: the microphone, your contacts, the camera and your location. The microphone and contacts matter most. A box will appear for each one.',
+    'सबसे पहले मुझे चार अनुमतियाँ चाहिए, ताकि मैं आपकी ठीक से मदद कर सकूँ: माइक्रोफ़ोन, आपके संपर्क, कैमरा और लोकेशन। माइक्रोफ़ोन और संपर्क सबसे ज़रूरी हैं। हर एक के लिए एक बॉक्स आएगा।',
+    'सर्वप्रथम मला चार परवानग्या हव्या आहेत, म्हणजे मी तुम्हाला नीट मदत करू शकेन: मायक्रोफोन, तुमचे संपर्क, कॅमेरा आणि स्थान. मायक्रोफोन आणि संपर्क सर्वात महत्त्वाचे आहेत. प्रत्येकासाठी एक बॉक्स येईल.'
+  ],
+  'encourage1': [
+    'No problem, take your time. Please speak clearly, right after the sound.',
+    'कोई बात नहीं, आराम से। कृपया आवाज़ के तुरंत बाद साफ़ बोलिए।',
+    'काही हरकत नाही, आरामात. कृपया आवाजानंतर लगेच स्पष्ट बोला.'
+  ],
+  'encourage2': [
+    "You're doing well, we're almost there. Let's try once more.",
+    'आप अच्छा कर रहे हैं, हम लगभग पहुँच गए हैं। एक बार फिर कोशिश करते हैं।',
+    'तुम्ही छान करत आहात, आपण जवळजवळ पोहोचलो आहोत. पुन्हा एकदा प्रयत्न करूया.'
+  ],
+  'encourage3': [
+    "I'm still here. Whenever you're ready, just start speaking and we'll finish sign-up together.",
+    'मैं यहीं हूँ। जब आप तैयार हों, बस बोलना शुरू कीजिए, हम साथ में साइन अप पूरा करेंगे।',
+    'मी इथेच आहे. तयार झाल्यावर फक्त बोलायला सुरुवात करा, आपण मिळून साइन अप पूर्ण करू.'
+  ],
+  'emIntro': [
+    "Now let's add your emergency contact. Please say the name exactly as it is saved in your phone's contacts. For example, if you saved your sister as Didi, say Didi. I'll find it for you.",
+    'अब अपना आपातकालीन संपर्क जोड़ते हैं। कृपया नाम वैसे ही बोलिए जैसे आपके फ़ोन के संपर्कों में सेव है। जैसे अगर आपने बहन को दीदी नाम से सेव किया है, तो बोलिए दीदी। मैं उसे ढूँढ लूँगी।',
+    'आता तुमचा आणीबाणी संपर्क जोडूया. कृपया नाव फोनच्या संपर्कांमध्ये जसे सेव्ह आहे तसेच सांगा. उदाहरणार्थ बहिणीला ताई म्हणून सेव्ह केले असेल तर म्हणा ताई. मी ते शोधून देईन.'
+  ],
+  'emRetry': [
+    "Let's try again. Please say the name exactly as it is saved in your contacts.",
+    'फिर कोशिश करते हैं। कृपया नाम वैसे ही बोलिए जैसे संपर्कों में सेव है।',
+    'पुन्हा प्रयत्न करूया. कृपया नाव संपर्कांमध्ये जसे सेव्ह आहे तसेच सांगा.'
+  ],
+  'yesNoPlease': [
+    'Please say yes or no.',
+    'कृपया हाँ या नहीं बोलिए।',
+    'कृपया हो किंवा नाही म्हणा.'
+  ],
+  'noTypeNeeded': [
+    "You don't need to type. Let's finish together by voice, I'll guide you.",
+    'आपको टाइप करने की ज़रूरत नहीं है। चलिए बोलकर ही पूरा करते हैं, मैं आपका साथ दूँगी।',
+    'तुम्हाला टाइप करण्याची गरज नाही. चला बोलूनच पूर्ण करूया, मी तुम्हाला मार्गदर्शन करेन.'
+  ],
+  'thanksReply': [
+    "No worries, you're welcome! Is there anything else I can do for you?",
+    'कोई बात नहीं, आपका स्वागत है! क्या मैं आपके लिए और कुछ कर सकती हूँ?',
+    'काही हरकत नाही, तुमचे स्वागत आहे! मी तुमच्यासाठी आणखी काही करू शकते का?'
+  ],
+  'byeReply': [
+    'Okay. If you need anything, just activate me by saying Hey Kalpana.',
+    'ठीक है। अगर कुछ चाहिए तो बोलिए Hey Kalpana।',
+    'ठीक आहे. काही हवे असल्यास म्हणा Hey Kalpana.'
+  ],
+  'sureHelp': [
+    'Sure, how can I help?',
+    'ज़रूर, मैं कैसे मदद करूँ?',
+    'नक्की, मी कशी मदत करू?'
+  ],
+  'micExplain': [
+    'I need microphone access to hear what you say. Please tap Allow on the next screen.',
+    'आप जो बोलते हैं वह सुनने के लिए मुझे माइक्रोफ़ोन की अनुमति चाहिए। कृपया अगली स्क्रीन पर अनुमति दें दबाएँ।',
+    'तुम्ही जे बोलता ते ऐकण्यासाठी मला मायक्रोफोनची परवानगी हवी आहे. कृपया पुढच्या स्क्रीनवर परवानगी द्या दाबा.'
+  ],
+  'permCamShort': [
+    'Next, the camera. I use it to read text and name things for you. Please tap Allow.',
+    'अब कैमरा। मैं इससे लिखा हुआ पढ़ती हूँ और चीज़ों के नाम बताती हूँ। कृपया अनुमति दें दबाएँ।',
+    'आता कॅमेरा. मी त्याने मजकूर वाचते आणि वस्तूंची नावे सांगते. कृपया परवानगी द्या दाबा.'
+  ],
+  'permContactsShort': [
+    'Next, your contacts. I use them to find your emergency contact by name. Please tap Allow.',
+    'अब आपके संपर्क। मैं इनसे नाम से आपका आपातकालीन संपर्क ढूँढती हूँ। कृपया अनुमति दें दबाएँ।',
+    'आता तुमचे संपर्क. मी त्यातून नावाने तुमचा आणीबाणी संपर्क शोधते. कृपया परवानगी द्या दाबा.'
+  ],
+  'permLocShort': [
+    'Last, your location. I use it to tell you where you are, and in emergencies. Please tap Allow.',
+    'आख़िर में लोकेशन। मैं इससे बताती हूँ कि आप कहाँ हैं, और आपातकाल में भी। कृपया अनुमति दें दबाएँ।',
+    'शेवटी स्थान. तुम्ही कुठे आहात हे सांगण्यासाठी आणि आणीबाणीत मी ते वापरते. कृपया परवानगी द्या दाबा.'
+  ],
+  'calling': [
+    'Calling {name} now.',
+    '{name} को कॉल कर रही हूँ।',
+    '{name} यांना कॉल करत आहे.'
+  ],
+  'callPermAsk': [
+    'To call directly, I need phone permission. Please tap Allow.',
+    'सीधे कॉल करने के लिए मुझे फ़ोन की अनुमति चाहिए। कृपया अनुमति दें दबाएँ।',
+    'थेट कॉल करण्यासाठी मला फोनची परवानगी हवी आहे. कृपया परवानगी द्या दाबा.'
+  ],
+  'confirmSos': [
+    'Emergency. I will call {name} now. Say yes to call, or no to cancel.',
+    'आपातकाल। मैं अभी {name} को कॉल करूँगी। कॉल के लिए बोलिए हाँ, रद्द के लिए नहीं।',
+    'आणीबाणी. मी आता {name} यांना कॉल करेन. कॉलसाठी म्हणा हो, रद्द करण्यासाठी नाही.'
   ],
 };
