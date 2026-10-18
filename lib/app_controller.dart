@@ -81,6 +81,10 @@ class AppController extends ChangeNotifier {
   Future<void>? _camFuture;
   bool analysing = false;
   String? captureBody;
+  // Automatic Explore scanning state.
+  bool _exploreScanning = false;
+  bool _exploreScanBusy = false;
+  String? _lastExploreAnnouncement;
 
   // always-listening state
   bool micOff = false;
@@ -189,6 +193,7 @@ class AppController extends ChangeNotifier {
       if (onboarded && !micOff) startLoop();
       if (isCapture(screen)) unawaited(initCamera());
     } else if (s == AppLifecycleState.paused) {
+      _exploreScanning = false;
       stopLoop(); // never listen / talk in the background
       unawaited(disposeCamera());
     }
@@ -199,6 +204,10 @@ class AppController extends ChangeNotifier {
     await voice.stop();
     voice.bargeEnabled = s != Screen.onboarding;
     final leaving = isCapture(screen) && !isCapture(s);
+    if (screen == Screen.explore && s != Screen.explore) {
+      _exploreScanning = false;
+      _lastExploreAnnouncement = null;
+    }
     screen = s;
     if (isCapture(s)) {
       captureBody = null;
@@ -1292,10 +1301,82 @@ class AppController extends ChangeNotifier {
       await ctl.initialize();
       cam = ctl;
       notifyListeners();
+      if (screen == Screen.explore) {
+        unawaited(_runExploreDetection());
+      }
     } catch (_) {
       await voice.speak(t('camFail'));
     } finally {
       if (!camReady) _camFuture = null;
+    }
+  }
+
+  Future<void> _runExploreDetection() async {
+    if (_exploreScanning || screen != Screen.explore || !camReady) {
+      return;
+    }
+
+    _exploreScanning = true;
+
+    try {
+      while (_exploreScanning && screen == Screen.explore && camReady) {
+        final ctl = cam;
+
+        if (ctl == null ||
+            !ctl.value.isInitialized ||
+            ctl.value.isTakingPicture ||
+            _exploreScanBusy ||
+            analysing) {
+          await Future<void>.delayed(
+            const Duration(milliseconds: 500),
+          );
+          continue;
+        }
+
+        _exploreScanBusy = true;
+
+        try {
+          final shot = await ctl.takePicture();
+
+          // Use on-device image labelling for periodic scans.
+          // final labels = await vision.labels(shot.path, lang);
+
+          // if (!_exploreScanning || screen != Screen.explore) {
+          //   break;
+          // }
+
+          // final result = labels.isEmpty
+          //     ? t('seeNothing')
+          //     : t('seeLabels', {'x': labels.join(', ')});
+
+          // Speak only when the reported result changes.
+          // if (result != _lastExploreAnnouncement)
+          final result = await _analyse(shot.path, Screen.explore);
+
+          if (!_exploreScanning || screen != Screen.explore) {
+            break;
+          }
+
+          // Announce only when the result changes.
+          if (result != _lastExploreAnnouncement) {
+            _lastExploreAnnouncement = result;
+            captureBody = result;
+            notifyListeners();
+            await voice.speak(result);
+          }
+        } catch (_) {
+          // Keep the preview running and retry on the next scan.
+        } finally {
+          _exploreScanBusy = false;
+        }
+
+        await Future<void>.delayed(
+          const Duration(seconds: 2),
+        );
+      }
+    } finally {
+      _exploreScanning = false;
+      _exploreScanBusy = false;
     }
   }
 
@@ -1362,6 +1443,11 @@ class AppController extends ChangeNotifier {
         try {
           if (!isCapture(screen)) await go(Screen.ocr, announce: false);
           await initCamera();
+          if (_exploreScanBusy) {
+            await voice.speak(
+                'Live detection is processing. Please try again in a moment.');
+            return;
+          }
           final ctl = cam;
           if (ctl == null || !camReady) return;
           await voice.speak(t('holdSteady'));
