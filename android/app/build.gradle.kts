@@ -4,6 +4,9 @@ plugins {
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
+dependencies {
+    implementation("com.google.mlkit:text-recognition-devanagari:16.0.1")
+}
 
 android {
     namespace = "com.example.kalpana"
